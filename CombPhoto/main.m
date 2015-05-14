@@ -43,11 +43,9 @@ int main(int argc, const char * argv[]) {
             NSLog(@"%@",error);
             return 0;
         }
+    
         
-        NSLog(@"%@",fileList);
-
         
-
         
         
         
@@ -153,7 +151,8 @@ int main(int argc, const char * argv[]) {
         
         [dddd writeToFile:[NSString stringWithCString:argv[2] encoding:NSUTF8StringEncoding] atomically:YES];
     
-        NSLog(@"DONE...\nThe picture");
+        NSLog(@"DONE...");
+        NSLog(@"The picture is saved to '%@'",[NSString stringWithCString:argv[2] encoding:NSUTF8StringEncoding]);
     }
     return 0;
 }
