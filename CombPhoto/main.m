@@ -32,6 +32,14 @@ void ScanFiles(NSFileManager * manager,NSMutableArray * listFile,NSString * root
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
+        if(argc <= 2)
+        {
+            printf("Paragraph error\n\n");
+            printf("----CombPhoto [source dic] [target path]");
+            
+            return 0;
+        }
+        
         NSFileManager * manager = [NSFileManager defaultManager];
         NSMutableArray * fileList = [[NSMutableArray alloc] init];
                 NSError * error;
@@ -146,8 +154,7 @@ int main(int argc, const char * argv[]) {
         
         CGImageDestinationFinalize(ref);
         
-        
-        NSData * dddd = (__bridge_transfer NSData *)da;
+        NSData * dddd = (NSData *)CFBridgingRelease(da);
         
         [dddd writeToFile:[NSString stringWithCString:argv[2] encoding:NSUTF8StringEncoding] atomically:YES];
     
