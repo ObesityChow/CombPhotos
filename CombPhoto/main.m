@@ -29,6 +29,10 @@ void ScanFiles(NSFileManager * manager,NSMutableArray * listFile,NSString * root
         }
     }
 }
+void CombPhoto_Crossing()
+{
+    
+}
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
